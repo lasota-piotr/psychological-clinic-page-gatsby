@@ -1,0 +1,79 @@
+/* ==========================================================================
+   #TYPE
+   ========================================================================== */
+
+
+
+
+/* Text center
+  ========================================================================== */
+
+.u-text-center {
+  text-align: center !important;
+}
+
+.u-text-center\@tablet {
+  @include mq($from: tablet) {
+    text-align: center !important;
+  }
+}
+
+.u-text-center\@desktop {
+  @include mq($from: desktop) {
+    text-align: center !important;
+  }
+}
+
+
+/* Text left
+  ========================================================================== */
+
+.u-text-left {
+  text-align: left !important;
+}
+
+.u-text-left\@tablet {
+  @include mq($from: tablet) {
+    text-align: left !important;
+  }
+}
+
+.u-text-left\@desktop {
+  @include mq($from: desktop) {
+    text-align: left !important;
+  }
+}
+
+/* Text right
+  ========================================================================== */
+
+.u-text-right {
+  text-align: right !important;
+}
+
+.u-text-right\@tablet {
+  @include mq($from: tablet) {
+    text-align: right !important;
+  }
+}
+
+.u-text-right\@desktop {
+  @include mq($from: desktop) {
+    text-align: right !important;
+  }
+}
+
+/* Text weight
+  ========================================================================== */
+
+.u-text-weight-light {
+  font-weight: $font-weight-light;
+}
+
+.u-text-weight-regular {
+  font-weight: $font-weight-regular;
+}
+
+.u-text-weight-bold {
+  font-weight: $font-weight-bold;
+}

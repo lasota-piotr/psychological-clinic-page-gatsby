@@ -1,0 +1,93 @@
+/* ==========================================================================
+   #PANEL
+   ========================================================================== */
+
+
+.c-panel {
+  padding-top: $unit;
+  padding-bottom: $unit;
+}
+
+
+
+
+
+/* Size variants
+   ========================================================================== */
+
+ .c-panel--flush {
+   padding-top: 0;
+   padding-bottom: 0;
+ }
+
+ .c-panel--flush\@tablet {
+   @include mq($from: tablet) {
+     padding-top: 0;
+     padding-bottom: 0;
+   }
+ }
+
+ .c-panel--small {
+   padding-top: $unit-small;
+   padding-bottom: $unit-small;
+ }
+
+ .c-panel--small\@tablet {
+   @include mq($from: tablet) {
+     padding-top: $unit-small;
+     padding-bottom: $unit-small;
+   }
+ }
+
+ .c-panel--large {
+   padding-top: $unit-large;
+   padding-bottom: $unit-large;
+ }
+
+ .c-panel--large\@tablet {
+   @include mq($from: tablet) {
+     padding-top: $unit-large;
+     padding-bottom: $unit-large;
+   }
+ }
+
+ .c-panel--huge {
+   padding-top: $unit-huge;
+   padding-bottom: $unit-huge;
+ }
+
+ .c-panel--huge\@tablet {
+   @include mq($from: tablet) {
+     padding-top: $unit-huge;
+     padding-bottom: $unit-huge;
+   }
+ }
+
+
+
+/* Color variants
+   ========================================================================== */
+
+.c-panel--light {
+  background-color: $color-panel-background--light;
+}
+
+.c-panel--very-light {
+  background-color: $color-panel-background--very-light;
+}
+
+.c-panel--dark {
+  background-color: $color-panel-background--dark;
+  color: $color-panel--dark;
+}
+
+.c-panel--attention {
+  background-color: $color-panel-background--attention;
+}
+
+/* Border variants
+   ========================================================================== */
+
+.c-panel--border-bottom {
+  border-bottom: 1px solid $color-gray--very-light;
+}

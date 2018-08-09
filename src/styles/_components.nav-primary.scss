@@ -1,0 +1,192 @@
+/* ==========================================================================
+   #NAV-PRIMARY
+   ========================================================================== */
+
+$nav-primary-element-height: 30px;
+
+.c-nav-primary {
+  display: flex;
+  align-items: center;
+  padding-top: $unit-small;
+  padding-bottom: $unit-small;
+}
+
+  .c-nav-primary__logo {
+    line-height: 20px;
+    margin: 0;
+    margin-right: auto;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .c-nav-primary__logo-img {
+    width: $unit;
+    height: $unit;
+  }
+
+  .c-nav-primary__logo-text {
+    @include font-size(20px);
+    font-weight: $font-weight-regular;
+  }
+
+  .c-nav-primary__list {
+    position: fixed;
+    margin: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    transform: translateX(100%);
+    transition: $global-transition;
+    padding-top: $unit;
+    background-color: $color-primary-nav-background;
+    max-width: 80%;
+
+    .is-open > & {
+      transform: none;
+    }
+
+    @include mq($from: tablet) {
+      position: static;
+      transform: none;
+      margin-left: auto;
+      display: flex;
+      padding-top: 0;
+      background-color: transparent;
+      max-width: none;
+    }
+  }
+
+  .c-nav-primary__menu-btn-wrapper {
+    position: absolute;
+    left: 0;
+    top: 18px;
+    transform: translateX(-140%);
+    transition: transform 0.1s;
+    transition-delay: 0.1s;
+
+    .is-open & {
+      transform: translateX(-95%);
+    }
+
+    @include mq($from: tablet) {
+      display: none;
+    }
+  }
+
+  .c-nav-primary__menu-btn {
+    color: $color-primary-nav-wide-text;
+    border: 2px solid currentColor; // TODO: change to $btn-ghost-border-width
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      background: none;
+    }
+
+    .is-open & {
+      color: #fff;
+      background-color: $color-primary-nav-background;
+      border-color: $color-primary-nav-background;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .c-nav-primary__item {
+    position: relative;
+  }
+
+
+  .c-nav-primary__link {
+    display: block;
+    padding: $unit-small $unit;
+    @include font-size(18px);
+    color: #fff;
+
+    @include mq($from: tablet) {
+      line-height: $nav-primary-element-height;
+      padding-left: $unit-small;
+      padding-right: $unit-small;
+      color: $color-primary-nav-wide-text;
+    }
+
+    &:hover {
+      color: $color-brand--light;
+
+      @include mq($from: tablet) {
+        color: $color-brand--dark;
+      }
+    }
+  }
+
+  .c-nav-primary__link--active {
+    text-decoration: underline;
+  }
+
+
+
+
+
+
+
+/* Sub-list menu
+   ========================================================================== */
+
+  .c-nav-primary__sub-list {
+    padding-left: $unit;
+
+
+    @include mq($from: tablet) {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      visibility: hidden;
+      padding: $unit-small $unit-tiny;
+      background-color: $color-primary-nav-background;
+      border-radius: $global-radius;
+      text-align: center;
+      box-shadow: 0 2px 6px 2px rgba(0,0,0,0.3);
+      transition: $global-transition-fast;
+    }
+
+    &::before {
+      @include mq($from: tablet) {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 10px solid transparent;
+        border-bottom: 15px solid $color-primary-nav-background;
+      }
+    }
+
+    .c-nav-primary__item:hover > & {
+      @include mq($from: tablet) {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .c-nav-primary__sub-link {
+    display: block;
+    padding: $unit-tiny $unit;
+    @include font-size(16px);
+    color: #fff;
+
+    @include mq($from: tablet) {
+      white-space: nowrap;
+    }
+
+    &:hover {
+      color: $color-brand--light;
+    }
+  }

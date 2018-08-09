@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #CTA
+   ========================================================================== */
+
+/**
+ * Call to action component
+ */
+
+.c-cta {
+  text-align: center;
+}
+
+  .c-cta__header {
+    @include font-size(30px);
+    font-weight: $font-weight-regular;
+    text-align: center;
+  }

@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #PAGE-HEAD
+   ========================================================================== */
+
+.c-page-head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  transition: background 150ms ease-in-out;
+
+  &.is-scrolled {
+    background-color: #fff;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.1)
+  }
+}
