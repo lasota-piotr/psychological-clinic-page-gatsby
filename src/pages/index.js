@@ -53,11 +53,11 @@ const IndexPage = ({ data }) => (
 
 export const query = graphql`
   query IndexQuery {
-      allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex : "/clinics/" } }
-          sort: { order: DESC, fields: [frontmatter___orderId] }
-          limit: 1000
-      ) {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/clinics/" } }
+      sort: { order: ASC, fields: [frontmatter___orderId] }
+      limit: 1000
+    ) {
       edges {
         node {
           id

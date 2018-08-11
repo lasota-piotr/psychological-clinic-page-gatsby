@@ -2,11 +2,11 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/layout'
-import MainFeatures from '../components/MainFeatures'
+import SpecialistsList from '../components/SpecialistsList'
 
-const SecondPage = ({ data }) => (
+const SpecialistsPage = ({ data }) => (
   <Layout>
-    <MainFeatures clinics={data.allMarkdownRemark.edges} />
+    <SpecialistsList specialists={data.allMarkdownRemark.edges} />
   </Layout>
 )
 
@@ -14,16 +14,24 @@ export const query = graphql`
   query SpecialistsQuery {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/specialists/" } }
-      sort: { order: DESC, fields: [frontmatter___orderId] }
+      sort: { order: ASC, fields: [frontmatter___orderId] }
       limit: 1000
     ) {
       edges {
         node {
           id
           frontmatter {
-            title
+            name
+            specializations
             summary
             path
+            mainImage {
+              childImageSharp {
+                fluid(maxWidth: 400, maxHeight: 400) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
         }
       }
@@ -31,4 +39,4 @@ export const query = graphql`
   }
 `
 
-export default SecondPage
+export default SpecialistsPage

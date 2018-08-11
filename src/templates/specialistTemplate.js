@@ -1,12 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 export default function Template({
-                                   data, // this prop will be injected by the GraphQL query below.
-                                 }) {
-  const { markdownRemark } = data // data.markdownRemark holds our post data
+  data, // this prop will be injected by the GraphQL query below.
+}) {
+  const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
-  const { title, summary } = frontmatter
+  const { name, summary, mainImage } = frontmatter
   return (
     <main data-ui-component="Clinic" data-page="clinics" className="js-main">
       <section
@@ -15,7 +16,7 @@ export default function Template({
       >
         <div className="o-wrapper c-hero__wrapper">
           <div className="c-hero__content">
-            <h1 className="c-hero__title u-padding-top-huge">SPECIALIST: {title}</h1>
+            <h1 className="c-hero__title u-padding-top-huge">{name}</h1>
           </div>
         </div>
       </section>
@@ -23,13 +24,16 @@ export default function Template({
       <div className="c-panel">
         <div className="o-wrapper">
           <div className="o-layout o-layout--center">
-            <div className="o-layout__item u-1/1 u-3/5@desktop">
-              <p className="u-text-weight-bold">{summary}</p>
+            <div className="o-layout__item u-1/1 u-3/5@tablet u-2/5@desktop u-margin-bottom">
+              <Img fluid={mainImage.childImageSharp.fluid} alt={name} />
             </div>
-            <div
-              className="o-layout__item u-1/1 u-3/5@desktop"
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
+            <div className="o-layout__item u-1/1 u-2/5@desktop">
+              <p
+                className="u-text-weight-bold"
+                dangerouslySetInnerHTML={{ __html: summary }}
+              />
+              <div dangerouslySetInnerHTML={{ __html: html }} />
+            </div>
           </div>
         </div>
       </div>
@@ -38,15 +42,22 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-    query($path: String!) {
-        markdownRemark(frontmatter: { path: { eq: $path } }) {
-            html
-            frontmatter {
-                orderId
-                path
-                title
-                summary
+  query($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
+      html
+      frontmatter {
+        name
+        specializations
+        summary
+        path
+        mainImage {
+          childImageSharp {
+            fluid(maxWidth: 409, maxHeight: 546) {
+              ...GatsbyImageSharpFluid_withWebp
             }
+          }
         }
+      }
     }
+  }
 `

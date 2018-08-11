@@ -14,7 +14,7 @@ exports.createPages = ({ actions, graphql }) => {
   return graphql(`
     {
       allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___orderId] }
+        sort: { order: ASC, fields: [frontmatter___orderId] }
         limit: 1000
       ) {
         edges {
@@ -39,7 +39,7 @@ exports.createPages = ({ actions, graphql }) => {
       } else if (node.fileAbsolutePath.includes('/specialists/')) {
         templateName = 'specialistTemplate'
       } else {
-        console.error('cannot find template for:', node.fileAbsolutePath)
+        return
       }
       createPage({
         path: node.frontmatter.path,

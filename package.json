@@ -4,14 +4,20 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "gatsby": "next",
+    "gatsby": "^2.0.0-beta.97",
+    "gatsby-image": "next",
     "gatsby-plugin-react-helmet": "next",
     "gatsby-plugin-sass": "next",
-    "gatsby-source-filesystem": "^1.5.39",
-    "gatsby-transformer-remark": "^1.7.44",
-    "node-sass": "^4.9.2",
+    "gatsby-plugin-sharp": "next",
+    "gatsby-remark-copy-linked-files": "next",
+    "gatsby-remark-images": "next",
+    "gatsby-source-filesystem": "next",
+    "gatsby-transformer-remark": "next",
+    "gatsby-transformer-sharp": "next",
+    "node-sass": "^4.9.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-google-maps-loader": "^4.2.3",
     "react-helmet": "^5.2.0"
   },
   "keywords": [
@@ -29,7 +35,7 @@
     "eslint-config-kentcdodds": "^14.0.0",
     "eslint-loader": "^2.1.0",
     "gatsby-plugin-eslint": "^1.0.3",
-    "prettier": "^1.14.1"
+    "prettier": "^1.14.2"
   },
   "repository": {
     "type": "git",
