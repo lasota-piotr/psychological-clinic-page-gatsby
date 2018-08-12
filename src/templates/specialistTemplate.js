@@ -32,7 +32,7 @@ export default function Template({ data, location }) {
                 className="u-text-weight-bold"
                 dangerouslySetInnerHTML={{ __html: summary }}
               />
-              <div dangerouslySetInnerHTML={{ __html: html }} />
+              {!!html && <div dangerouslySetInnerHTML={{ __html: html }} />}
             </div>
           </div>
         </div>

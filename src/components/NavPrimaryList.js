@@ -29,6 +29,14 @@ const NavPrimaryList = ({ getOpenTogglerProps, clinics }) => {
       </NavPrimaryItem>
 
       <NavPrimaryItemLink to="/specjalisci">Specjaliści</NavPrimaryItemLink>
+      <a
+        href="https://www.osoz.pl/osoz-www/przychodnia/logowanie/872080"
+        className="c-nav-primary__link"
+        target="_blank"
+        rel="noopener noreferrer nofllow"
+      >
+        Rejestracja online
+      </a>
       <NavPrimaryItemLink to="/kontakt">Kontakt</NavPrimaryItemLink>
     </ul>
   )

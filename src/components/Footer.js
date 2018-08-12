@@ -36,6 +36,13 @@ const Footer = ({ clinics, contact }) => {
                 <li>
                   <Link to="/specjalisci">Specialiści</Link>
                 </li>
+                <a
+                  href="https://www.osoz.pl/osoz-www/przychodnia/logowanie/872080"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                >
+                  Rejestracja online
+                </a>
                 <li>
                   <Link to="/kontakt">Kontakt</Link>
                 </li>

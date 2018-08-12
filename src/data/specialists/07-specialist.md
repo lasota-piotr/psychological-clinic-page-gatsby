@@ -1,0 +1,10 @@
+---
+path: "/specjalisci/lukasz-trela"
+name: "Łukasz Trela"
+specializations: "Terapeuta uzależnień"
+orderId: "007"
+mainImage: "./07-specialist.jpg"
+summary: "Certyfikowany terapeuta uzależnień. Zajmuje się diagnostyką oraz pracą terapeutyczną z osobami uzależnionymi i współuzależnionymi. W swojej pracy korzysta z podejścia poznawczo-begawioralnego. Prowadzi konsultacje, terapię indywidualną oraz grupową."
+---
+
+Pracuje w nurcie poznawczo-behawioralnym. Na pracę psychoterapeuty składają się następujące elementy:<br>- Budowanie przymierza terapeutycznego z klientem opartego w duchu ,, Dialogu Motywującego\" na który składają się takie elementy jak : budowanie relacji, budowanie zaufania, ustalanie granic, ochrona poufności, zachowanie wiarygodności, utrzymywanie współpracy, odwoływanie się do poczucia własnej wartości klienta, oraz budowanie motywacji klienta  w oparciu o techniki metody ,, Dialogu Motywującego\"<br>- Ustalanie struktury sesji na który składają się takie elementy jak: ustalanie planu sesji, ocena nastroju klienta, odwoływanie się do poprzedniej sesji, dyskusja o planie sesji, dialog sokratejski, krótkie podsumowania, zadania domowe, informacje zwrotne w trakcie sesji terapeutycznej<br>- Wprowadzenie klienta w model poznawczy na który składają się takie elementy jak: odkrywanie oceny problemu przez klienta, ukazywanie związków pomiędzy sytuacjami, myślami, emocjami, głodem substancji lub czynności, zachowaniem a konsumpcją substancji lub czynności ,, Scenariusz Głodu\"<br>- Ustalanie celów terapeutycznych z klientem  w oparciu o techniki ,,Dialogu Motywującego\"<br>- Praca nad poszczególnymi elementami uzależnienia od substancji lub czynności takimi jak :-<br>-  rozpoznawanie uzależnienia<br>-  rozpoznawanie i radzenie sobie z głodem substancji lub czynności w nurcie poznawczo - behawioralnym<br>- praca nad etapami budowania ,,tożsamości osoby uzależnionej\",<br>-praca nad bezsilnością wobec substancji lub czynności<br>- przygotowywanie Planu Awaryjnego i Sieci Wsparcia wraz z klientem <br>- przygotowywanie Osobistego Planu Terapii przy współpracy z klientem
