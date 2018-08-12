@@ -6,8 +6,8 @@ import MainFeatures from '../components/MainFeatures'
 import MainHalf from '../components/MainHalf'
 import MainCta from '../components/MainCta'
 
-const IndexPage = ({ data }) => (
-  <Layout>
+const IndexPage = ({ data, location }) => (
+  <Layout location={location}>
     <article className="c-hero c-hero--landing" data-ui-component="Page Hero">
       <div className="o-wrapper c-hero__wrapper">
         <div className="c-hero__content">

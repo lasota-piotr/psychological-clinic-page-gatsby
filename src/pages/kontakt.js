@@ -8,8 +8,9 @@ const ContactPage = ({
   data: {
     markdownRemark: { contact },
   },
+  location,
 }) => (
-  <Layout>
+  <Layout location={location}>
     <Contact contact={contact} />
   </Layout>
 )

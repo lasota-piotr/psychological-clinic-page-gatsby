@@ -1,10 +1,9 @@
 import React from 'react'
-import { withPrefix } from 'gatsby-link'
 import Observer from 'react-intersection-observer'
 import HeaderContent from './HeaderConent'
 
 const Header = props => {
-  const isHomepage = location.pathname === withPrefix('/')
+  const isHomepage = props.location && props.location.pathname === '/'
   return (
     <div>
       {isHomepage ? (

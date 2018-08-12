@@ -3,14 +3,12 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
 
-export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
+export default function Template({ data, location }) {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
-  const { name, summary, specializations,mainImage } = frontmatter
+  const { name, summary, specializations, mainImage } = frontmatter
   return (
-    <Layout>
+    <Layout location={location}>
       <section
         className="c-hero c-hero--small c-hero--center"
         data-ui-component="Page Hero"
@@ -18,9 +16,7 @@ export default function Template({
         <div className="o-wrapper c-hero__wrapper">
           <div className="c-hero__content">
             <h1 className="c-hero__title u-padding-top-huge">{name}</h1>
-            <h2 className="c-hero__sub-title">
-              {specializations}
-            </h2>
+            <h2 className="c-hero__sub-title">{specializations}</h2>
           </div>
         </div>
       </section>

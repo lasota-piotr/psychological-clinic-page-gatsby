@@ -2,14 +2,12 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 
-export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
+export default function Template({ data, location }) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark
   const { title, summary } = frontmatter
   return (
-    <Layout>
+    <Layout location={location}>
       <section
         className="c-hero c-hero--small c-hero--center"
         data-ui-component="Page Hero"

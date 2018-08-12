@@ -8,8 +8,9 @@ const SpecialistsPage = ({
   data: {
     allMarkdownRemark: { specialists },
   },
+  location,
 }) => (
-  <Layout>
+  <Layout location={location}>
     <SpecialistsList specialists={specialists} />
   </Layout>
 )
