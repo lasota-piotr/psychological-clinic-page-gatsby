@@ -7,6 +7,7 @@
     "classnames": "^2.2.6",
     "gatsby": "^2.0.0-beta.97",
     "gatsby-image": "next",
+    "gatsby-plugin-html-attributes": "^1.0.4",
     "gatsby-plugin-react-helmet": "next",
     "gatsby-plugin-sass": "next",
     "gatsby-plugin-sharp": "next",

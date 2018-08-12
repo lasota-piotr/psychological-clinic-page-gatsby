@@ -52,8 +52,16 @@ const Layout = ({ children, data, location }) => (
         <Helmet
           title={site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            {
+              name: 'description',
+              content:
+                'Poradnia zdrowia psychicznego w Ostrowcu Świętokrzyskim. Psychiatra Ostrowiec, psycholog, psychoterapeuta ☎ 41 263-39-36',
+            },
+            {
+              name: 'keywords',
+              content:
+                'NFZ, psychiatra ostrowiec, psycholog ostrowiec, psychoterapeuta ostrowiec, dobry psychiatra, dobry psycholog, dobry psychoterapeuta',
+            },
           ]}
         />
         <Header
