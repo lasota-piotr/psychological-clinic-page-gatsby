@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
 import '../styles/main.scss'
+import Footer from './Footer'
 
 const Layout = ({ children, data }) => (
   <StaticQuery
@@ -22,19 +23,46 @@ const Layout = ({ children, data }) => (
             }
           }
         }
+        clinics: allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/clinics/" } }
+          sort: { order: ASC, fields: [frontmatter___orderId] }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              id
+              frontmatter {
+                title
+                path
+              }
+            }
+          }
+        }
+        markdownRemark(fileAbsolutePath: { regex: "/data/other/contact.md/" }) {
+          contact: frontmatter {
+            name
+            address
+            number
+          }
+        }
       }
     `}
-    render={data => (
+    render={({ site, logo, clinics, markdownRemark: { contact } }) => (
       <>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={site.siteMetadata.title}
           meta={[
             { name: 'description', content: 'Sample' },
             { name: 'keywords', content: 'sample, something' },
           ]}
         />
-        <Header siteTitle={data.site.siteMetadata.title} logo={data.logo} />
+        <Header
+          siteTitle={site.siteMetadata.title}
+          logo={logo}
+          clinics={clinics.edges}
+        />
         <main>{children}</main>
+        <Footer clinics={clinics.edges} contact={contact} />
       </>
     )}
   />

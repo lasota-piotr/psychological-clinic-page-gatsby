@@ -8,11 +8,7 @@ const SpecialistsListContent = ({ specialists }) =>
 
 const SpecialistsList = props => {
   return (
-    <div
-      data-ui-component="Spacialists"
-      data-page="specialists"
-      className="js-main"
-    >
+    <>
       <section className="c-hero c-hero--small" data-ui-component="Page Hero">
         <div className="o-wrapper c-hero__wrapper">
           <div className="c-hero__content">
@@ -28,7 +24,7 @@ const SpecialistsList = props => {
           </section>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

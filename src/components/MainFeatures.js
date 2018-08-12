@@ -1,5 +1,6 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { Link } from 'gatsby'
+import { FaCheckCircle } from 'react-icons/fa'
 
 const MainFeatures = ({ clinics }) => {
   return (
@@ -15,9 +16,7 @@ const MainFeatures = ({ clinics }) => {
               >
                 <div className="o-block o-block--tiny">
                   <div className="o-block__img">
-                    <svg className="c-icon c-icon--huge" viewBox="0 0 24 24">
-                      icon
-                    </svg>
+                    <FaCheckCircle className="c-icon c-icon--huge" />
                   </div>
                   <div className="o-block__body">
                     <h3 className="u-h4">

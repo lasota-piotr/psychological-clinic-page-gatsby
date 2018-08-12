@@ -6,18 +6,18 @@ import Contact from '../components/Contact'
 
 const ContactPage = ({
   data: {
-    markdownRemark: { frontmatter },
+    markdownRemark: { contact },
   },
 }) => (
   <Layout>
-    <Contact contact={frontmatter} />
+    <Contact contact={contact} />
   </Layout>
 )
 
 export const query = graphql`
   query ContactQuery {
     markdownRemark(fileAbsolutePath: { regex: "/data/other/contact.md/" }) {
-      frontmatter {
+      contact: frontmatter {
         name
         address
         number

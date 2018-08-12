@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Layout from '../components/layout'
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -8,7 +9,7 @@ export default function Template({
   const { frontmatter, html } = markdownRemark
   const { title, summary } = frontmatter
   return (
-    <main data-ui-component="Clinic" data-page="clinics" className="js-main">
+    <Layout>
       <section
         className="c-hero c-hero--small c-hero--center"
         data-ui-component="Page Hero"
@@ -33,7 +34,7 @@ export default function Template({
           </div>
         </div>
       </div>
-    </main>
+    </Layout>
   )
 }
 

@@ -4,9 +4,13 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import SpecialistsList from '../components/SpecialistsList'
 
-const SpecialistsPage = ({ data }) => (
+const SpecialistsPage = ({
+  data: {
+    allMarkdownRemark: { specialists },
+  },
+}) => (
   <Layout>
-    <SpecialistsList specialists={data.allMarkdownRemark.edges} />
+    <SpecialistsList specialists={specialists} />
   </Layout>
 )
 
@@ -17,7 +21,7 @@ export const query = graphql`
       sort: { order: ASC, fields: [frontmatter___orderId] }
       limit: 1000
     ) {
-      edges {
+      specialists: edges {
         node {
           id
           frontmatter {

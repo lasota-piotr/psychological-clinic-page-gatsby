@@ -21,14 +21,13 @@ const SpecialistsElement = ({
     >
       <div className="o-block o-block--left">
         <div className="o-block__img">
-          <Img
-            fluid={mainImage.childImageSharp.fluid}
-            alt={name}
-          />
+          <Img fluid={mainImage.childImageSharp.fluid} alt={name} />
         </div>
 
         <div className="o-block__body">
-          <h2 className="c-card__title u-text-weight-regular">{name}</h2>
+          <Link to={path}>
+            <h2 className="c-card__title u-text-weight-regular">{name}</h2>
+          </Link>
           <h3 className="c-card__subtitle">{specializations}</h3>
           <p
             className="c-card__content"

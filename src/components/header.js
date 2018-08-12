@@ -1,37 +1,26 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
-import HeaderLinks from './HeaderLinks'
+import { withPrefix } from 'gatsby-link'
+import Observer from 'react-intersection-observer'
+import HeaderContent from './HeaderConent'
 
-const Header = ({
-  siteTitle,
-  logo: {
-    childImageSharp: { fixed: logoFixed },
-  },
-}) => (
-  <header className="c-page-head js-page-head">
-    <div className="o-wrapper">
-      <nav
-        className="c-nav-primary js-nav-primary"
-        data-ui-component="Main navigation"
-      >
-        <Link to="/" className="c-nav-primary__logo">
-          <div className="o-flag o-flag--small">
-            <div className="o-flag__img c-nav-primary__logo-img">
-              <Img fixed={logoFixed} alt="Świętokrzyski Ośrodek Terapii Logo" />
-            </div>
-            <div className="o-flag__body">
-              <h1 className="c-nav-primary__logo-text">
-                Świętokrzyski
-                <br /> Ośrodek Terapii
-              </h1>
-            </div>
-          </div>
-        </Link>
-        <HeaderLinks />
-      </nav>
+const Header = props => {
+  const isHomepage = location.pathname === withPrefix('/')
+  return (
+    <div>
+      {isHomepage ? (
+        <Observer>
+          {({ inView, ref }) => (
+            <>
+              <div ref={ref} />
+              <HeaderContent {...props} shouldHighlight={!inView} />
+            </>
+          )}
+        </Observer>
+      ) : (
+        <HeaderContent {...props} shouldHighlight />
+      )}
     </div>
-  </header>
-)
+  )
+}
 
 export default Header
