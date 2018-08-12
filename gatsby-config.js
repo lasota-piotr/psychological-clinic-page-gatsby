@@ -4,6 +4,18 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Świętokrzyski Ośrodek Terapii",
+        short_name: "Świętokrzyski Ośrodek Terapii",
+        start_url: "/",
+        background_color: "#f7f0eb",
+        theme_color: "#2196f3",
+        display: "minimal-ui",
+        icon: "src/images/sot.png", // This path is relative to the root of the site.
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/data/other`,
