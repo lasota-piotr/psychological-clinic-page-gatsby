@@ -47,7 +47,7 @@ $nav-primary-element-height: 30px;
       transform: none;
     }
 
-    @include mq($from: tablet) {
+    @include mq($from: tablet-large) {
       position: static;
       transform: none;
       margin-left: auto;
@@ -70,7 +70,7 @@ $nav-primary-element-height: 30px;
       transform: translateX(-95%);
     }
 
-    @include mq($from: tablet) {
+    @include mq($from: tablet-large) {
       display: none;
     }
   }
@@ -108,7 +108,7 @@ $nav-primary-element-height: 30px;
     @include font-size(18px);
     color: #fff;
 
-    @include mq($from: tablet) {
+    @include mq($from: tablet-large) {
       line-height: $nav-primary-element-height;
       padding-left: $unit-small;
       padding-right: $unit-small;
@@ -118,7 +118,7 @@ $nav-primary-element-height: 30px;
     &:hover {
       color: $color-brand--light;
 
-      @include mq($from: tablet) {
+      @include mq($from: tablet-large) {
         color: $color-brand--dark;
       }
     }
@@ -141,7 +141,7 @@ $nav-primary-element-height: 30px;
     padding-left: $unit;
 
 
-    @include mq($from: tablet) {
+    @include mq($from: tablet-large) {
       position: absolute;
       top: 100%;
       left: 50%;
@@ -157,7 +157,7 @@ $nav-primary-element-height: 30px;
     }
 
     &::before {
-      @include mq($from: tablet) {
+      @include mq($from: tablet-large) {
         content: "";
         position: absolute;
         bottom: 100%;
@@ -169,7 +169,7 @@ $nav-primary-element-height: 30px;
     }
 
     .c-nav-primary__item:hover > & {
-      @include mq($from: tablet) {
+      @include mq($from: tablet-large) {
         opacity: 1;
         visibility: visible;
       }
@@ -182,7 +182,7 @@ $nav-primary-element-height: 30px;
     @include font-size(16px);
     color: #fff;
 
-    @include mq($from: tablet) {
+    @include mq($from: tablet-large) {
       white-space: nowrap;
     }
 
