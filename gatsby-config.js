@@ -7,7 +7,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: "Świętokrzyski Ośrodek Terapii",
-        short_name: "Świętokrzyski Ośrodek Terapii",
+        short_name: "SOT",
         start_url: "/",
         background_color: "#f7f0eb",
         theme_color: "#2196f3",
