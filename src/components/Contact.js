@@ -1,8 +1,9 @@
 import React from 'react'
 import ContactForm from './ContactForm'
+import ContactMap from './ContactMap'
 
 const Contact = ({
-  contact: { name, address, number, googleMapsLink, lat, lng },
+  contact: { name, address, number, googleMapsLink},
 }) => {
   return (
     <div data-ui-component="Contact" data-page="contact" className="js-main">
@@ -80,8 +81,7 @@ const Contact = ({
           </section>
         </div>
       </div>
-
-      <div className="js-map c-map" style={{ width: '100%', height: 400 }} />
+      <ContactMap googleMapsLink={googleMapsLink} />
     </div>
   )
 }

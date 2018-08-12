@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "classnames": "^2.2.6",
     "gatsby": "^2.0.0-beta.97",
     "gatsby-image": "next",
     "gatsby-plugin-react-helmet": "next",
@@ -17,7 +18,6 @@
     "node-sass": "^4.9.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-google-maps-loader": "^4.2.3",
     "react-helmet": "^5.2.0"
   },
   "keywords": [

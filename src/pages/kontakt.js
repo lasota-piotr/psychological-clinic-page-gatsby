@@ -22,8 +22,6 @@ export const query = graphql`
         address
         number
         googleMapsLink
-        lat
-        lng
       }
     }
   }

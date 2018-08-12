@@ -15,6 +15,13 @@ const Layout = ({ children, data }) => (
             title
           }
         }
+        logo: file(relativePath: { eq: "sot.png" }) {
+          childImageSharp {
+            fixed(width: 48, height: 48) {
+              ...GatsbyImageSharpFixed_withWebp
+            }
+          }
+        }
       }
     `}
     render={data => (
@@ -26,7 +33,7 @@ const Layout = ({ children, data }) => (
             { name: 'keywords', content: 'sample, something' },
           ]}
         />
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.site.siteMetadata.title} logo={data.logo} />
         <main>{children}</main>
       </>
     )}
