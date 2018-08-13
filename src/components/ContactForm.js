@@ -35,6 +35,8 @@ const ContactForm = () => {
         required
         className="c-field u-margin-bottom-small"
       />
+      <input type="hidden" name="_language" value="pl" />
+      <input type="text" name="_gotcha" style={{ display: 'none' }} />
       <div className="u-text-right">
         <input type="submit" value="Wyślij" className="c-btn c-btn--primary" />
       </div>
