@@ -4,7 +4,7 @@ const ContactForm = () => {
   return (
     <form
       method="POST"
-      action="//formspree.io/varicumok@1rentcar.top"
+      action="//formspree.io/kontakt@sot.ostrowiec.pl"
       className="o-flex o-flex--column"
     >
       <label htmlFor="name">Imię</label>
