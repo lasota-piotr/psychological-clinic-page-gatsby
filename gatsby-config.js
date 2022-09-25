@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Świętokrzyski Ośrodek Terapii',
+    siteUrl: "https://sot.ostrowiec.pl"
   },
   plugins: [
     {
