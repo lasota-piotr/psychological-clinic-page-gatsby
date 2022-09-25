@@ -3,8 +3,9 @@ import React from 'react'
 const ContactForm = () => {
   return (
     <form
+      name="kontakt"
       method="POST"
-      action="//formspree.io/kontakt@sot.ostrowiec.pl"
+      data-netlify="true"
       className="o-flex o-flex--column"
     >
       <label htmlFor="name">Imię</label>
@@ -12,7 +13,6 @@ const ContactForm = () => {
         type="text"
         name="name"
         id="name"
-        placeholder="Imię"
         required
         className="c-field u-margin-bottom-small"
       />
@@ -20,8 +20,7 @@ const ContactForm = () => {
       <input
         type="email"
         id="email"
-        name="_replyto"
-        placeholder="Email"
+        name="email"
         required
         className="c-field u-margin-bottom-small"
       />
@@ -31,12 +30,13 @@ const ContactForm = () => {
         id="message"
         cols="30"
         rows="10"
-        placeholder="Tekst wiadomości"
         required
         className="c-field u-margin-bottom-small"
       />
-      <input type="hidden" name="_language" value="pl" />
-      <input type="text" name="_gotcha" style={{ display: 'none' }} />
+
+      <label className="u-hidden">
+        Nie wypełniaj jeśli jesteś człowiekiem <input name="bot-field" />
+      </label>
       <div className="u-text-right">
         <input type="submit" value="Wyślij" className="c-btn c-btn--primary" />
       </div>
