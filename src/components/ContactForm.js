@@ -1,11 +1,5 @@
 import React, { useRef } from 'react'
 
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
-
 const ContactForm = () => {
   const refForm = useRef()
   const handleSubmit = event => {
@@ -13,14 +7,10 @@ const ContactForm = () => {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': event.target.getAttribute('name'),
-        ...name,
-      }),
+      body: new FormData(event.target),
     })
       // eslint-disable-next-line no-alert
       .then(res => {
-        console.log({ c: refForm.current })
         if (!res.ok) {
           // eslint-disable-next-line no-console
           console.error(res.statusText)
@@ -42,6 +32,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       className="o-flex o-flex--column"
       ref={refForm}
+      data-netlify="true"
     >
       <label htmlFor="name">Imię</label>
       <input
