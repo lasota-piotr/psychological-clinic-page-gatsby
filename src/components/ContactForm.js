@@ -1,12 +1,47 @@
-import React from 'react'
+import React, { useRef } from 'react'
+
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
 
 const ContactForm = () => {
+  const refForm = useRef()
+  const handleSubmit = event => {
+    event.preventDefault()
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': event.target.getAttribute('name'),
+        ...name,
+      }),
+    })
+      // eslint-disable-next-line no-alert
+      .then(res => {
+        console.log({ c: refForm.current })
+        if (!res.ok) {
+          // eslint-disable-next-line no-console
+          console.error(res.statusText)
+          throw res.error
+        }
+        if (refForm.current?.reset) {
+          refForm.current.reset()
+        }
+        // eslint-disable-next-line no-alert
+        alert('Dziękujemy za zgłoszenie')
+      })
+      // eslint-disable-next-line no-alert
+      .catch(() => alert('Wystąpił błąd. Spróbuj ponownie później'))
+  }
   return (
     <form
       name="kontakt"
       method="POST"
-      data-netlify="true"
+      onSubmit={handleSubmit}
       className="o-flex o-flex--column"
+      ref={refForm}
     >
       <label htmlFor="name">Imię</label>
       <input
@@ -37,6 +72,7 @@ const ContactForm = () => {
       <label className="u-hidden">
         Nie wypełniaj jeśli jesteś człowiekiem <input name="bot-field" />
       </label>
+      <input type="hidden" name="form-name" value="kontakt" />
       <div className="u-text-right">
         <input type="submit" value="Wyślij" className="c-btn c-btn--primary" />
       </div>
