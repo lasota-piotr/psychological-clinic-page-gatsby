@@ -4,10 +4,14 @@ const ContactForm = () => {
   const refForm = useRef()
   const handleSubmit = event => {
     event.preventDefault()
+    const formData = new FormData(event.target)
+    if (!formData) {
+      throw new Error('wrong formData')
+    }
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new FormData(event.target),
+      body: new URLSearchParams(formData).toString(),
     })
       // eslint-disable-next-line no-alert
       .then(res => {
