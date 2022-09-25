@@ -1,23 +1,30 @@
 module.exports = {
   siteMetadata: {
     title: 'Świętokrzyski Ośrodek Terapii',
-    siteUrl: "https://sot.ostrowiec.pl"
+    siteUrl: 'https://sot.ostrowiec.pl',
   },
   plugins: [
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Świętokrzyski Ośrodek Terapii",
-        short_name: "SOT",
-        start_url: "/",
-        background_color: "#f7f0eb",
-        theme_color: "#2196f3",
-        display: "minimal-ui",
-        icon: "src/images/sot.png", // This path is relative to the root of the site.
+        name: 'Świętokrzyski Ośrodek Terapii',
+        short_name: 'SOT',
+        start_url: '/',
+        background_color: '#f7f0eb',
+        theme_color: '#2196f3',
+        display: 'minimal-ui',
+        icon: 'src/images/sot.png', // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-robots-txt`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://sot.ostrowiec.pl',
+        sitemap: 'https://sot.ostrowiec.pl/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
